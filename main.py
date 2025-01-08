@@ -6,10 +6,12 @@ def main():
     sorted_letter_values = sort_dict_values(letter_count)
     sorted_letter_keys = sort_dict_keys(letter_count)
     print(f"""--- Beginning Report of {book_path} ---
-    This document contains {word_count} words.""")
+    This document contains {word_count} words.
+    """)
     for i in range(26):
         print(f"    The letter '{sorted_letter_keys[i]}' appears {sorted_letter_values[i]} times.")
-    print("--- End of Report ---")
+    print("""
+--- End of Report ---""")
 
 
 def get_book_text(path):

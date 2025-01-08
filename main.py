@@ -1,5 +1,6 @@
 def main():
-    book_path = "books/" + input("Enter the name of the book:") + ".txt"
+    raw = "books/" + input("Enter the name of the book:") + ".txt"
+    book_path = raw.lower()
     text = get_book_text(book_path)
     word_count = get_word_count(text)
     letter_count = get_letter_count(text)
@@ -41,4 +42,9 @@ def sort_dict_keys(letter_count):
     keys = sorted(letter_count, key=lambda x: letter_count[x] , reverse=True)
     return keys
 
-main()
+try:
+    main()
+except FileNotFoundError:
+    print("This book couldn't be found in the /books directory")
+except Exception as e:
+    print(e)

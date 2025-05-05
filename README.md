@@ -6,3 +6,5 @@ The book must be located in a books/ directory and be a .txt file.
 The name of the book must be all in lowercase.
 
 e.g. ./books/frankenstein.txt
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!

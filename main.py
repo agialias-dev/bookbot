@@ -1,8 +1,11 @@
 from stats import get_book_text, get_word_count, get_letter_count, sort_dict_values, sort_dict_keys
+import sys
 
 def main():
-    raw = "books/" + input("Enter the name of the book:") + ".txt"
-    book_path = raw.lower()
+#    raw = "books/" + input("Enter the name of the book:") + ".txt"
+#    book_path = raw.lower()
+    if len(sys.argv) > 1:
+        book_path = sys.argv[1]
     text = get_book_text(book_path)
     word_count = get_word_count(text)
     letter_count = get_letter_count(text)
@@ -19,6 +22,7 @@ def main():
 try:
     main()
 except FileNotFoundError:
+    sys.exit(1)
     print("This book couldn't be found in the /books directory")
 except Exception as e:
     print(e)

@@ -17,7 +17,7 @@ def main():
     This document contains {word_count} words.
     """)
     for i in range(26):
-        print(f"    The letter '{sorted_letter_keys[i]}' appears {sorted_letter_values[i]} times.")
+        print(f"    The letter '{sorted_letter_keys[i]}' appears {sorted_letter_values[i]} times. {sorted_letter_keys[i]}: {sorted_letter_values[i]}")
     print("""
 --- End of Report ---""")
 

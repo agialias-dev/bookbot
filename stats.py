@@ -1,5 +1,5 @@
-def get_book_text(path):
-    with open(path) as f:
+def get_book_text(book_path):
+    with open(book_path) as f:
         return f.read()
 
 def get_word_count(text):
@@ -13,7 +13,7 @@ def get_letter_count(text):
                    'v':0,'w':0,'x':0,'y':0,'z':0}
     lower_case = text.lower()
     for char in lower_case:
-        if char.isalpha():
+        if char.isalpha() and char in letter_dict:
             letter_dict[char] = letter_dict.get(char) + 1
     return letter_dict
     
